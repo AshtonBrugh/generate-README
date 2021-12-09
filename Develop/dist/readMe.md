@@ -24,6 +24,8 @@ ok
 
 
 ## License
+This is covered under the Apache license. The link to this license is https://www.apache.org/licenses/LICENSE-2.0.txt
+
 
 
 ## Contributing
@@ -37,6 +39,4 @@ ok
 My github profile: www.github.com/ok <br>
 If you have any further questions about this project contact me at: <br>
  ok
-
-
 

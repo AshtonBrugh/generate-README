@@ -1,9 +1,9 @@
-// // TODO: Include packages needed for this application
+// Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// // TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = () => {
     return inquirer.prompt([
         {
@@ -23,7 +23,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'description',
-            message: 'Provide a description of your project (Required).',
+            message: 'Provide a description of your project. (Required)',
             validate: projectDescription => {
                 if (projectDescription) {
                     return true;
@@ -36,7 +36,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'Provide step by step instructions on how to get the development environemnt running (Required).',
+            message: 'Provide step by step instructions on how to get the development environemnt running. (Required)',
             validate: projectInstallation => {
                 if (projectInstallation) {
                     return true;
@@ -61,7 +61,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'credits',
-            message: 'List your collaborators, with links to their Github profiles.',
+            message: 'List your collaborators with links to their Github profiles. (Required)',
             validate: projectCredits => {
                 if(projectCredits) {
                     return true;
@@ -73,7 +73,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'tests',
-            message: 'Provide test instructions and examples of how to run them.',
+            message: 'Provide test instructions and examples of how to run them. (Required)',
             validate: projectTests => {
                 if(projectTests) {
                     return true;
