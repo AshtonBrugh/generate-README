@@ -1,5 +1,7 @@
 // // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // // TODO: Create an array of questions for user input
 const questions = () => {
@@ -20,7 +22,7 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'decription',
+            name: 'description',
             message: 'Provide a description of your project. (Required)',
             validate: projectDescription => {
                 if (projectDescription) {
@@ -79,14 +81,30 @@ const questions = () => {
                     console.log('Please provide test instructions & examples!')
                 } return false;
             }
+        },
+        {
+            type: 'list',
+            name: 'license',
+            message: 'Choose a license',
+            choices: ['Apache', 'MIT', 'GNU']
+            
         }
-    ]);
+    ])
+    .then(answers  => { 
+       var generateReadMe =  generateMarkdown(answers);
+       writeToFile('./dist/readMe.md', generateReadMe);
+    })
 };
 
 questions();
 
 // // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+const writeToFile = (fileName, data) => {
+    fs.writeFile(fileName, data, err => {
+        if (err) throw err
+    })
+};
+
 
 // // TODO: Create a function to initialize app
 // function init() {}
