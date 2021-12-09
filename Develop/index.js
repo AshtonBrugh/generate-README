@@ -23,7 +23,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'description',
-            message: 'Provide a description of your project. (Required)',
+            message: 'Provide a description of your project (Required).',
             validate: projectDescription => {
                 if (projectDescription) {
                     return true;
@@ -36,7 +36,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'Provide step by step instructions on how to get the development environemnt running (Required)',
+            message: 'Provide step by step instructions on how to get the development environemnt running (Required).',
             validate: projectInstallation => {
                 if (projectInstallation) {
                     return true;
@@ -61,7 +61,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'credits',
-            message: 'List your collaborators, with links to their Github profiles',
+            message: 'List your collaborators, with links to their Github profiles.',
             validate: projectCredits => {
                 if(projectCredits) {
                     return true;
@@ -73,7 +73,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'tests',
-            message: 'Provide test instructions and examples of how to run them',
+            message: 'Provide test instructions and examples of how to run them.',
             validate: projectTests => {
                 if(projectTests) {
                     return true;
@@ -86,8 +86,33 @@ const questions = () => {
             type: 'list',
             name: 'license',
             message: 'Choose a license',
-            choices: ['Apache', 'MIT', 'GNU']
+            choices: ['Apache', 'MIT', 'GNU', 'No license']
             
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Please enter your Github username. (Required)',
+            validate: projectsGithub => {
+                if(projectsGithub) {
+                    return true;   
+                } else {
+                    console.log('Please enter your Github username!')
+                } return false;
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please provide a valid email address. (Required)',
+            validate: projectEmail => {
+                if(projectEmail) {
+                    return true;
+                } else {
+                    console.log('Please provide a valid email!')
+                } return false;
+            }
+
         }
     ])
     .then(answers  => { 
