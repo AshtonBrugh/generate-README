@@ -1,7 +1,7 @@
 # Generate a professional README
 
 ## Description
-This project is a command line application that accepts user input to a generate professional README file. The README file is generated with the title of the project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions.
+This project is a command line application that accepts user input to a generate professional README file. The README file is generated with the title of the project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions. This project is powered by Node.
 
 ## Installation
 The environment can be run simply by navigating to the Develop folder and running node index.js.
